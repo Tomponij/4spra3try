@@ -38,6 +38,12 @@
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>
+            <li class="nav-item dropdown ">
+                <div class="nav-link dropdown-toggle">
+                    {{ Auth::user()->name }}
+                </div>
+
+            </li>
         </ul>
     </div>
 </nav>
