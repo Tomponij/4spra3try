@@ -32,7 +32,37 @@
                 <a href="">Naar wedstrijd schema</a>
             </div>
             <div class="col">
-                Mijn team
+                <h4>Mijn team</h4>
+                <table class="table table-danger">
+                    <thead>
+                    <tr>
+                        <th scope="col">nummer</th>
+                        <th scope="col">speler</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>speler</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>speler</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>speler</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>speler</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>speler</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

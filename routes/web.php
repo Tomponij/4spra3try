@@ -29,6 +29,8 @@ Route::get('/index',[PagesController::class,'index'])->middleware(['auth'])->nam
 
 Route::get('/teams',[PagesController::class,'teams'])->name('teams');
 
+
+
 //CRUD
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){

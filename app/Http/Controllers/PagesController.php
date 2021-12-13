@@ -17,4 +17,6 @@ class PagesController extends Controller
         $teams = Team::all();
         return view('pages/teams')->with(compact('teams'));
     }
+
+
 }
