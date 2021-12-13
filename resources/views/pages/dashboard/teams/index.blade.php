@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container">
-        <h1>Dashboard</h1>
-        <h2>Teams overzicht</h2>
+        <h1 class="text-success">Dashboard</h1>
+        <h2 class="text-danger">Teams overzicht</h2>
         <table class="table">
             <thead>
             <tr>

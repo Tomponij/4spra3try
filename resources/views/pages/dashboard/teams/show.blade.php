@@ -4,7 +4,7 @@
 
     <div class="container">
         <h1>Dashboard</h1>
-        <h2>Teams detailpagina</h2>
+        <h2 class="text-success">Teams detailpagina</h2>
         <hr>
         <h3>{{$team->name}}</h3>
 

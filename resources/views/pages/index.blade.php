@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <table class="table table-dark">
+                <table class="table table-danger">
                     <thead>
                     <tr>
                         <th scope="col">Plaats</th>
