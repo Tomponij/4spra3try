@@ -6,8 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>4S| Voetbaltoernooi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"rel="stylesheet"integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"crossorigin="anonymous">
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-warning">
     <a class="navbar-brand" href="#">Schooltoernooi</a>
@@ -25,7 +24,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{{route('teams.index')}}">Overzicht</a>
-                    <a class="dropdown-item" href="">{{route('teams.create')}}</a>
+                    <a class="dropdown-item" href="{{route('teams.create')}}">Team Aanmaken</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -40,9 +39,11 @@
             </li>
             <li class="nav-item dropdown ">
                 <div class="nav-link dropdown-toggle">
-                    {{ Auth::user()->name }}
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ Auth::user()->name }}</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </div>
-
             </li>
         </ul>
     </div>
