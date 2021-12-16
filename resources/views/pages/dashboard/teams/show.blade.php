@@ -7,6 +7,8 @@
         <h2 class="text-success">Teams detailpagina</h2>
         <hr>
         <h3>{{$team->name}}</h3>
+        <h3>Speler namen</h3>
+        <h4>{{$team->playerName}}</h4>
 
         <div class="buttons">
             @if($team->creator_id == Auth::user()->id)

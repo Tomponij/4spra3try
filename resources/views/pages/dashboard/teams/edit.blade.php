@@ -18,6 +18,10 @@
             <label for="TeamNameInput">Team Naam:</label>
             <input type="text" value="{{$team->name}}" class="form-control" name="TeamName" placeholder="Team naam">
         </div>
-        <button type="submit" class="btn btn-primary">Aanmaken</button>
+        <div class="form-group">
+            <label for="PlayerNameInput">Speler Naam:</label>
+            <input type="text" value="{{$team->playerName}}" class="form-control" name="PlayerName" placeholder="Player naam">
+        </div>
+        <button type="submit" class="btn btn-primary">Updaten</button>
     </form>
 @endsection

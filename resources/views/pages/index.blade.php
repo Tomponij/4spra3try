@@ -41,26 +41,12 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($teams as $team)
                         <tr>
                             <th scope="row">1</th>
-                            <td>speler</td>
+                            <td>{{$team->playerName}}</td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>speler</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>speler</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>speler</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>speler</td>
-                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>

@@ -44,6 +44,7 @@ class TeamsController extends Controller
 
         $team = new Team();
         $team->name = $request->TeamName;
+        $team->playerName = $request->PlayerName;
         $team->creator_id = Auth::user()->id;
         $team->save();
         return redirect()->route('teams.index');
@@ -90,6 +91,7 @@ class TeamsController extends Controller
 
         $team= Team::findOrFail($id);
         $team->name = $request->TeamName;
+        $team->playerName = $request->PlayerName;
         $team->save();
 
         return redirect()->route('teams.index');
