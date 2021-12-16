@@ -6,7 +6,8 @@
         <h1>Dashboard</h1>
         <h2 class="text-success">Teams detailpagina</h2>
         <hr>
-        <h3>{{$team->name}}</h3>
+        <h3>Team naam: {{$team->name}}</h3>
+        <hr>
         <h3>Speler namen</h3>
         <h4>{{$team->playerName}}</h4>
 
