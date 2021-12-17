@@ -8,7 +8,7 @@
         <hr>
         <h3>Team naam: {{$team->name}}</h3>
         <hr>
-        <h3>Speler namen</h3>
+        <h3>Speler namen:</h3>
         <h4>{{$team->playerName}}</h4>
 
         <div class="buttons">

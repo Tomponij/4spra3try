@@ -27,6 +27,8 @@ Route::get('/dashboard', function () {
 
 Route::get('/index',[PagesController::class,'index'])->middleware(['auth'])->name('index');
 
+Route::get('/games', [PagesController::class,'games'])->name('games');
+
 Route::get('/teams',[PagesController::class,'teams'])->name('teams');
 
 

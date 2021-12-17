@@ -29,7 +29,7 @@
         <div class="row">
 
             <div class="col-7">
-                <a href="">Naar wedstrijd schema</a>
+                <a href="{{route('games')}}">Naar wedstrijd schema</a>
             </div>
             <div class="col">
                 <h4>Mijn team</h4>

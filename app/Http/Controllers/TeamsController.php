@@ -15,6 +15,7 @@ class TeamsController extends Controller
      */
     public function index()
     {
+
         $teams = Team::all();
         return view('pages/dashboard/teams/index')->with(compact('teams'));
     }
@@ -89,7 +90,7 @@ class TeamsController extends Controller
             'TeamName'=> 'required'
         ]);
 
-        $team= Team::findOrFail($id);
+        $team = Team::findOrFail($id);
         $team->name = $request->TeamName;
         $team->playerName = $request->PlayerName;
         $team->save();
