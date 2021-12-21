@@ -23,6 +23,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/dashboard',[PagesController::class,'index'])->middleware(['auth'])->name('index');
 //routes
 
 Route::get('/index',[PagesController::class,'index'])->middleware(['auth'])->name('index');

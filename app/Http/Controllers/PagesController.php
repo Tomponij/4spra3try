@@ -20,8 +20,9 @@ class PagesController extends Controller
 
     public function games()
     {
-        $teams = Team::all();
+        $teams = Team::join('users', 'creator_id','=','users.id')->get(['teams.*','users.name as creatorname']);
         return view('pages/games')->with(compact('teams'));
+
     }
 
 

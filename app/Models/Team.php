@@ -9,5 +9,4 @@ class Team extends Model
 {
     use HasFactory;
     protected $table = 'teams';
-
 }

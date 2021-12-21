@@ -7,18 +7,22 @@
         <tr>
             <th scope="col">Tijd</th>
             <th scope="col">Thuis team</th>
+            <th scope="col">Goals thuis team</th>
             <th scope="col">vs</th>
             <th scope="col">Uit team</th>
+            <th scope="col">Goals uit team</th>
 
         </tr>
         </thead>
         <tbody>
         @foreach($teams as $team)
             <tr>
-                <th scope="row">{{$team->start_time}}</th>
+                <td>{{$team->start_time}}</td>
                 <td>{{$team->name}}</td>
+                <td>{{$team->team1_score}}</td>
                 <td>vs</td>
                 <td>{{$team->name}}</td>
+                <td>{{$team->team1_score}}</td>
             </tr>
         @endforeach
         </tbody>
@@ -30,8 +34,10 @@
         <tr>
             <th scope="col">Tijd</th>
             <th scope="col">Thuis team</th>
+            <th scope="col">Goals thuis team</th>
             <th scope="col">vs</th>
             <th scope="col">Uit team</th>
+            <th scope="col">Goals uit team</th>
 
         </tr>
         </thead>
@@ -40,8 +46,10 @@
             <tr>
                 <th scope="row">{{$team->start_time}}</th>
                 <td>{{$team->name}}</td>
+                <td>{{$team->team1_score}}</td>
                 <td>vs</td>
                 <td>{{$team->name}}</td>
+                <td>{{$team->team1_score}}</td>
             </tr>
         @endforeach
         </tbody>
