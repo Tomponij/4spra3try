@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Match;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PagesController extends Controller
 {
@@ -21,7 +23,8 @@ class PagesController extends Controller
     public function games()
     {
         $teams = Team::join('users', 'creator_id','=','users.id')->get(['teams.*','users.name as creatorname']);
-        return view('pages/games')->with(compact('teams'));
+        $matches = DB::table('games')->get();
+        return view('pages/games')->with(compact('matches'));
 
     }
 

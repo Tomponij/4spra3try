@@ -14,14 +14,14 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($teams as $team)
+        @foreach($matches as $match)
             <tr>
-                <td>{{$team->start_time}}</td>
-                <td>{{$team->field_id}}</td>
-                <td>{{$team->name}}</td>
+                <td></td>
+                <td>{{$match->field_id}}</td>
+                <td>{{\App\Models\Team::where('id','=',$match->team1_id)->get()[0]->name}}</td>
                 <td>vs</td>
-                <td>{{$team->name}}</td>
-                <td>{{$team->team1_score}} - {{$team->team2_score}}</td>
+                <td>{{\App\Models\Team::where('id','=',$match->team2_id)->get()[0]->name}}</td>
+                <td></td>
             </tr>
         @endforeach
         </tbody>
@@ -40,14 +40,14 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($teams as $team)
+        @foreach($matches as $match)
             <tr>
-                <td>{{$team->start_time}}</td>
-                <td>{{$team->field_id}}</td>
-                <td>{{$team->name}}</td>
+                <td></td>
+                <td>{{$match->field_id}}</td>
+                <td>{{\App\Models\Team::where('id','=',$match->team1_id)->get()[0]->name}}</td>
                 <td>vs</td>
-                <td>{{$team->name}}</td>
-                <td>{{$team->team1_score}} - {{$team->team2_score}}</td>
+                <td>{{\App\Models\Team::where('id','=',$match->team2_id)->get()[0]->name}}</td>
+                <td>{{$match->team1_score}} - {{$match->team2_score}}</td>
             </tr>
         @endforeach
         </tbody>

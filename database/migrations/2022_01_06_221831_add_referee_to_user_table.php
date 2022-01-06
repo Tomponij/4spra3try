@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTeamsTable extends Migration
+class AddRefereeToUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateTeamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('teams', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('playerName')->nullable();
-            $table->foreignId('creator_id')->references('id')->on('users');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('referee')->default('0');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateTeamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin');
+        Schema::table('user', function (Blueprint $table) {
+            //
+        });
     }
 }
