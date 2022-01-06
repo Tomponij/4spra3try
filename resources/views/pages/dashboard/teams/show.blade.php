@@ -12,7 +12,7 @@
         <h4>{{$team->playerName}}</h4>
 
         <div class="buttons">
-            @if($team->creator_id == Auth::user()->id)
+            @if(Auth::user()->admin == 1 or Auth::user()->id == $team->creator_id)
                 <a href="{{route('teams.edit', $team->id)}}" class="btn btn-info">Aanpassen</a>
             @endif
             <form action="{{route('teams.destroy', $team->id)}}" method="post">
