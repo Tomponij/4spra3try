@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Match;
+use App\Models\Game;
 use App\Models\Team;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,6 +14,12 @@ class PagesController extends Controller
     {
         $teams = Team::all()->take(5);
         return view('pages/index')->with(compact('teams'));
+    }
+
+    public function usersManagement()
+    {
+        $users = User::all();
+        return view('pages/userManagement')->with(compact('users'));
     }
 
     public function teams(){

@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\GamesController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\TeamsController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,18 +21,16 @@ Route::get('/', function () {
     return redirect()->route('index');
 });
 
-Route::get('/dashboard', function () {
+/*Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');*/
 
 Route::get('/dashboard',[PagesController::class,'index'])->middleware(['auth'])->name('index');
 //routes
 
 Route::get('/index',[PagesController::class,'index'])->middleware(['auth'])->name('index');
 
-Route::get('/games', [PagesController::class,'games'])->name('games');
 
-Route::get('/teams',[PagesController::class,'teams'])->name('teams');
 
 
 
@@ -38,6 +38,8 @@ Route::get('/teams',[PagesController::class,'teams'])->name('teams');
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
     Route::resource('teams', TeamsController::class);
+    Route::resource('games',GamesController::class);
+    Route::resource('accounts',UsersController::class);
 });
 
 require __DIR__.'/auth.php';

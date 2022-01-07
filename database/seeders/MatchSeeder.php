@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Match;
+use App\Models\Game;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 

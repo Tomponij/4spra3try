@@ -28,7 +28,7 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="{{route('games')}}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="{{route('games.index')}}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Speelschema
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -37,6 +37,13 @@
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>
+
+            @if(Auth::user()->admin == 1 or Auth::user()->referee == 1 )
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{route('accounts.index')}}">Accounts</a>
+                </li>
+            @endif
+
             <li class="nav-item dropdown ">
                 <div class="nav-link dropdown-toggle">
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ Auth::user()->name }}</a>
