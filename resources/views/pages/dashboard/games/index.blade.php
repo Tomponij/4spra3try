@@ -38,6 +38,11 @@
             <th scope="col">Uit team</th>
             <th scope="col">Stand</th>
             <th scope="col">Scheidsrechter</th>
+            @if(Auth::user()->admin == 1)
+                <th scope="col">Uitslag invullen</th>
+            @endif
+
+
         </tr>
         </thead>
         <tbody>
@@ -50,6 +55,7 @@
                 <td>{{\App\Models\Team::where('id','=',$match->team2_id)->get()[0]->name}}</td>
                 <td>{{$match->team1_score}} - {{$match->team2_score}}</td>
                 <td>{{\App\Models\User::where('id','=',$match->referee_id)->get()[0]->name}}</td>
+                <td><a href="">Uitslag toevoegen</a></td>
             </tr>
         @endforeach
         </tbody>
