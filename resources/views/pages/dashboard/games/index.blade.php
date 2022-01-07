@@ -55,7 +55,7 @@
                 <td>{{\App\Models\Team::where('id','=',$match->team2_id)->get()[0]->name}}</td>
                 <td>{{$match->team1_score}} - {{$match->team2_score}}</td>
                 <td>{{\App\Models\User::where('id','=',$match->referee_id)->get()[0]->name}}</td>
-                <td><a href="">Uitslag toevoegen</a></td>
+                <td><a href="{{route('games.edit',$match->id)}}">Uitslag toevoegen</a></td>
             </tr>
         @endforeach
         </tbody>

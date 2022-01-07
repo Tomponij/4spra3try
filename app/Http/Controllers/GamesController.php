@@ -43,7 +43,7 @@ class GamesController extends Controller
      */
     public function show($id)
     {
-        //
+        // return edit form
     }
 
     /**
@@ -54,7 +54,8 @@ class GamesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $game = Game::findOrFail($id);
+        return view('pages.dashboard.games.edit')->with(compact('game'));
     }
 
     /**
@@ -66,7 +67,11 @@ class GamesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $game = Game::findOrFail($id);
+        $game->update(['team1_score'=>$request->team1Score,'team2_score'=>$request->team2Score]);
+        $game->save();
+
+        return redirect()->route('games.index');
     }
 
     /**
