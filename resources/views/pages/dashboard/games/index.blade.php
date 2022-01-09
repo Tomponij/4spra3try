@@ -2,7 +2,7 @@
 
 @section('content')
     <table class="table table-danger">
-        <h1>Aankomende Wedstrijden</h1>
+        <h1>Opkomende Wedstrijden</h1>
         <thead>
         <tr>
             <th scope="col">Tijd</th>
