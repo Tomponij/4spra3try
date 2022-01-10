@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FieldController;
 use App\Http\Controllers\GamesController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\TeamsController;
@@ -40,6 +41,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
     Route::resource('teams', TeamsController::class);
     Route::resource('games',GamesController::class);
     Route::resource('accounts',UsersController::class);
+    Route::resource('fields',FieldController::class);
 });
 
 require __DIR__.'/auth.php';

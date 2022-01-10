@@ -40,7 +40,7 @@ class TeamsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-           'TeamName'=>'required|unique'
+           'TeamName'=>'required'
         ]);
 
         $team = new Team();

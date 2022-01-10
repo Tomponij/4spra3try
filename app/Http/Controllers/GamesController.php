@@ -68,7 +68,7 @@ class GamesController extends Controller
     public function update(Request $request, $id)
     {
         $game = Game::findOrFail($id);
-        $game->update(['team1_score'=>$request->team1Score,'team2_score'=>$request->team2Score]);
+        $game->update(['team1_score'=>$request->team1Score,'team2_score'=>$request->team2Score,'field_id'=>$request->fieldInput]);
         $game->save();
 
         return redirect()->route('games.index');

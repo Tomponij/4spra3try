@@ -23,7 +23,7 @@ class FieldController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.dashboard.fields.create');
     }
 
     /**
@@ -32,7 +32,14 @@ class FieldController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'fieldName' => 'required',
+        ]);
+        $field = new Field();
+        $field->name = $request->fieldName;
+        $field->save();
+
+        return redirect()->route('fields.index');
     }
 
     /**
@@ -41,7 +48,8 @@ class FieldController extends Controller
      */
     public function show($id)
     {
-        //
+        $field = Field::findOrFail($id);
+        return view('pages.dashboard.fields.create')->with(compact('field'));
     }
 
     /**
@@ -50,7 +58,8 @@ class FieldController extends Controller
      */
     public function edit($id)
     {
-        //
+        $field = Field::findOrFail($id);
+        return view('pages.dashboard.fields.create')->with(compact('field'));
     }
 
     /**
@@ -59,7 +68,14 @@ class FieldController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $field = Field::findOrFail($id);
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $field->name = $request->name;
+        $field->save();
+
+        return redirect()->route('fields.index');
     }
 
     /**
@@ -68,6 +84,7 @@ class FieldController extends Controller
      */
     public function destroy($id)
     {
-
+        Field::destroy($id);
+        return redirect()->route('fields.index');
     }
 }

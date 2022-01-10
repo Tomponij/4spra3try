@@ -15,17 +15,17 @@ class TeamSeeder extends Seeder
     public function run()
     {
         DB::table('teams')->insert([
-            'name' => 'Ajax',
+            'name' => 'EenhoornTeam',
             'creator_id' => 1,
         ]);
 
         DB::table('teams')->insert([
-            'name' => 'PSV',
+            'name' => 'PietenTeam',
             'creator_id' => 3,
         ]);
 
         DB::table('teams')->insert([
-            'name' => 'NAC',
+            'name' => 'CroissantjesTeam',
             'creator_id' => 3,
         ]);
     }

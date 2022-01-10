@@ -23,6 +23,11 @@
             <label for="Team2scoreInput">Score team 2:</label>
             <input type="number" value="{{$game->team2_score}}" class="form-control" name="team2Score" placeholder="team2Score">
         </div>
+
+        <div class="form-group">
+            <label for="field input">Veld aanpassen:</label>
+            <input type="number" value="{{$game->field_name}}" class="form-control" name="fieldInput" placeholder="field input">
+        </div>
         <button type="submit" class="btn btn-primary">Invullen</button>
     </form>
 

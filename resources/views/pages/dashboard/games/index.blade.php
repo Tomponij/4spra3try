@@ -11,6 +11,9 @@
             <th scope="col">vs</th>
             <th scope="col">Uit team</th>
             <th scope="col">Scheidsrechter</th>
+            @if(Auth::user()->admin == 1)
+                <th scope="col">Wedstrijd wijzigen</th>
+            @endif
         </tr>
         </thead>
         <tbody>
@@ -22,6 +25,7 @@
                 <td>vs</td>
                 <td>{{\App\Models\Team::where('id','=',$match->team2_id)->get()[0]->name}}</td>
                 <td>{{\App\Models\User::where('id','=',$match->referee_id)->get()[0]->name}}</td>
+                <td><a href="{{route('games.edit',$match->id)}}">Wedstrijd wijzigen</a></td>
             </tr>
         @endforeach
         </tbody>
