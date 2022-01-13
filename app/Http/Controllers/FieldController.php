@@ -49,7 +49,7 @@ class FieldController extends Controller
     public function show($id)
     {
         $field = Field::findOrFail($id);
-        return view('pages.dashboard.fields.create')->with(compact('field'));
+        return view('pages.dashboard.fields.edit')->with(compact('field'));
     }
 
     /**
@@ -59,7 +59,7 @@ class FieldController extends Controller
     public function edit($id)
     {
         $field = Field::findOrFail($id);
-        return view('pages.dashboard.fields.create')->with(compact('field'));
+        return view('pages.dashboard.fields.edit')->with(compact('field'));
     }
 
     /**
@@ -68,10 +68,11 @@ class FieldController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $field = Field::findOrFail($id);
-        $request->validate([
-            'name' => 'required',
+        $this->validate($request, [
+            'name'=>'required'
         ]);
+        $field = Field::findOrFail($id);
+
         $field->name = $request->name;
         $field->save();
 
