@@ -11,7 +11,7 @@
             <th scope="col">vs</th>
             <th scope="col">Uit team</th>
             <th scope="col">Scheidsrechter</th>
-            @if(Auth::user()->admin == 1)
+            @if (Auth::user()->admin = 1)
                 <th scope="col">Wedstrijd wijzigen</th>
             @endif
         </tr>
@@ -19,7 +19,7 @@
         <tbody>
         @foreach($matches as $match)
             <tr>
-                <td></td>
+                <td>{{$match->speeltijd}}</td>
                 <td>{{$match->field_id}}</td>
                 <td>{{\App\Models\Team::where('id','=',$match->team1_id)->get()[0]->name}}</td>
                 <td>vs</td>
@@ -42,7 +42,7 @@
             <th scope="col">Uit team</th>
             <th scope="col">Stand</th>
             <th scope="col">Scheidsrechter</th>
-            @if(Auth::user()->admin == 1)
+            @if(Auth::user()->admin = 1)
                 <th scope="col">Uitslag invullen</th>
             @endif
 
