@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use Illuminate\Http\Request;
+use function GuzzleHttp\Promise\all;
+use function PHPUnit\Framework\returnArgument;
 
 class GamesController extends Controller
 {
@@ -93,4 +95,12 @@ class GamesController extends Controller
 
         return redirect()->route('games.index');
     }
+
+    //api
+    // Fetcher
+    public function arrayfetcher()
+    {
+        return response()->json(Game::all());
+    }
+
 }

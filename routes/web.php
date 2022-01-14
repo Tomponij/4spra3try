@@ -45,3 +45,6 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
 });
 
 require __DIR__.'/auth.php';
+
+
+
