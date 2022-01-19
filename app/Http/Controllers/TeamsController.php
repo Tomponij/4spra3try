@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Game;
 use Illuminate\Http\Request;
 use App\Models\Team;
 use Illuminate\Support\Facades\Auth;
@@ -15,9 +16,9 @@ class TeamsController extends Controller
      */
     public function index()
     {
-
+        $games = Game::all();
         $teams = Team::all();
-        return view('pages/dashboard/teams/index')->with(compact('teams'));
+        return view('pages/dashboard/teams/index')->with(compact('teams'))->with(compact('games'));
     }
 
     /**
@@ -40,7 +41,7 @@ class TeamsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-           'TeamName'=>'required'
+           'TeamName'=>'required|unique:teams,name'
         ]);
 
         $team = new Team();

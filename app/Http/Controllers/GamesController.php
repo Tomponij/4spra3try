@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Field;
 use App\Models\Game;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use function GuzzleHttp\Promise\all;
 use function PHPUnit\Framework\returnArgument;
@@ -103,4 +105,30 @@ class GamesController extends Controller
         return response()->json(Game::all());
     }
 
+    public function genereer(){
+
+        $teams = Team::all();
+
+        for ($i=0 ; $i < count($teams)-1 ; $i++) {
+            // Loop through the 'visiting' teams, start one above the home team
+            for ($k = $i + 1; $k < count($teams); $k++) {
+                $game = new Game();
+                $game->team1_id = $teams[$i]->id;
+                $game->team2_id = $teams[$k]->id;
+                $game->field_id = rand(1,Field::all()->count());
+                $game->referee_id = 1;
+                $game->save();
+            }
+        }
+        return redirect()->route('games.index');
+    }
+
+
+
+
+
+
 }
+
+
+

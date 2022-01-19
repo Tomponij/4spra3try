@@ -17,8 +17,8 @@ class CreateGamesTable extends Migration
             $table->id();
             $table->foreignId('team1_id')->references('id')->on('teams');
             $table->foreignId('team2_id')->references('id')->on('teams');
-            $table->integer('team1_score');
-            $table->integer('team2_score');
+            $table->integer('team1_score')->nullable();
+            $table->integer('team2_score')->nullable();
             $table->foreignId('field_id')->references('id')->on('fields');
             $table->foreignId('referee_id')->references('id')->on('users');
             $table->timestamps();

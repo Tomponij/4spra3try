@@ -18,6 +18,11 @@
             @endforeach
             </tbody>
         </table>
-        <a href="{{route('teams.create')}}" class="btn btn-primary">Nieuw team aanmaken</a>
+        @if($games->count() == 0)
+            <a href="{{route('teams.create')}}" class="btn btn-primary">Nieuw team aanmaken</a>
+        @else
+            <p>Er zijn al wedstrijden aangemaakt.</p>
+        @endif
+
     </div>
 @endsection

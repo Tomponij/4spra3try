@@ -1,6 +1,9 @@
 @extends('base')
 
 @section('content')
+    @if(Auth::user()->admin == 1 )
+        <a href="{{route('genereer')}}">Wedstrijden Genereren</a>
+    @endif
     <table class="table table-danger">
         <h1>Opkomende Wedstrijden</h1>
         <thead>
