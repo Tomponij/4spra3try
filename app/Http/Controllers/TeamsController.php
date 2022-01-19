@@ -29,7 +29,7 @@ class TeamsController extends Controller
     public function create()
     {
         $teams = Team::all();
-        return view('pages/dashboard/teams/create')->with(compact('teams'));
+        return view('pages/dashboard/teams/teamusers')->with(compact('teams'));
     }
 
     /**
@@ -110,4 +110,10 @@ class TeamsController extends Controller
         Team::destroy($id);
         return redirect()->route('teams.index');
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
 }

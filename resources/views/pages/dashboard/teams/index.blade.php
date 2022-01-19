@@ -23,6 +23,7 @@
         @else
             <p>Er zijn al wedstrijden aangemaakt.</p>
         @endif
+        <a href="{{route('teams.create')}}">Creeëren</a>
 
     </div>
 @endsection

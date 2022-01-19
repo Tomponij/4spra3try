@@ -1,8 +1,9 @@
 @extends('base')
 
 @section('content')
-    <h1>Users toevoegen voor aan team</h1>
-    @if(Auth::user()->user = 0 and name)
-        <p>{{}}</p>
+    <h1>Users toevoegen voor een team</h1>
+    @if(Auth::user()->referee == 0 and Auth::user()->admin == 0)
+        <p><input type="checkbox"> {{Auth::user()->name}}</p>
     @endif
 @endsection
+

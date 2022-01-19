@@ -33,8 +33,8 @@ class UserSeeder extends Seeder
         $user->name = 'Fons Doggen';
         $user->email = 'fonsdoggen@gmail.com';
         $user->password = Hash::make('test123testFons');
-        $user->referee = '1';
-        $user->admin = '1';
+        $user->referee = '0';
+        $user->admin = '0';
         $user->save();
 
         $user = new User();
@@ -42,7 +42,7 @@ class UserSeeder extends Seeder
         $user->email = 'jeroen@gmail.com';
         $user->password = Hash::make('test123testJeroen');
         $user->referee = '0';
-        $user->admin = '0';
+        $user->referee = '0';
         $user->save();
     }
 }
