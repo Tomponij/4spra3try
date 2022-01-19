@@ -123,7 +123,7 @@ class GamesController extends Controller
         return redirect()->route('games.index');
     }
 
-
+    
 
 
 
