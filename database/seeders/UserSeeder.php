@@ -35,14 +35,22 @@ class UserSeeder extends Seeder
         $user->email = 'fonsdoggen@gmail.com';
         $user->password = Hash::make('test123testFons');
         $user->referee = '0';
-        $user->admin = '0';
+        $user->admin = '1';
         $user->save();
 
         $user = new User();
         $user->name = 'Jeroen';
         $user->email = 'jeroen@gmail.com';
         $user->password = Hash::make('test123testJeroen');
+        $user->admin = '0';
         $user->referee = '0';
+        $user->save();
+
+        $user = new User();
+        $user->name = 'Pieter';
+        $user->email = 'Pieter@gmail.com';
+        $user->password = Hash::make('test123testPieter');
+        $user->admin = '0';
         $user->referee = '0';
         $user->save();
     }

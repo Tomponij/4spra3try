@@ -21,11 +21,7 @@
                     @method('DELETE')
                     <input type="submit" value="Verwijderen" class="btn btn-danger">
                 @endif
-                @foreach($users as $user)
-                    @if($user->referee == 0 and $user->admin == 0)
-                        <p><input type="checkbox"> {{ $user->name }}</p>
-                    @endif
-                @endforeach
+
             </form>
         </div>
     </div>

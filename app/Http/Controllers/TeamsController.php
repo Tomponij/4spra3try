@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Team;
 use Illuminate\Support\Facades\Auth;
+use phpDocumentor\Reflection\Types\AbstractList;
 
 class TeamsController extends Controller
 {
@@ -62,8 +63,8 @@ class TeamsController extends Controller
     public function show($id)
     {
         $team = Team::findOrFail($id);
-        $users = User::all();
-        return view('pages/dashboard/teams/show')->with('team', $team)->with('users', $users);
+
+        return view('pages/dashboard/teams/show')->with('team', $team);
     }
 
     /**
@@ -75,7 +76,8 @@ class TeamsController extends Controller
     public function edit($id)
     {
         $team = Team::findOrFail($id);
-        return view('pages/dashboard/teams/edit')->with('team', $team);
+        $users = User::all();
+        return view('pages/dashboard/teams/edit')->with('team', $team)->with('users', $users);
 
     }
 
@@ -90,12 +92,12 @@ class TeamsController extends Controller
     {
 
         $this->validate($request, [
-            'TeamName'=> 'required'
+            'TeamName'=> 'required',
         ]);
 
         $team = Team::findOrFail($id);
         $team->name = $request->TeamName;
-        $team->playerName = $request->PlayerName;
+        $team->PlayerName = $request->PlayerName;
         $team->save();
 
         return redirect()->route('teams.index');
