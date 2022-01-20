@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Team;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +30,7 @@ class TeamsController extends Controller
     public function create()
     {
         $teams = Team::all();
-        return view('pages/dashboard/teams/teamusers')->with(compact('teams'));
+        return view('pages/dashboard/teams/create')->with(compact('teams'));
     }
 
     /**
@@ -61,7 +62,8 @@ class TeamsController extends Controller
     public function show($id)
     {
         $team = Team::findOrFail($id);
-        return view('pages/dashboard/teams/show')->with('team', $team);
+        $users = User::all();
+        return view('pages/dashboard/teams/show')->with('team', $team)->with('users', $users);
     }
 
     /**
