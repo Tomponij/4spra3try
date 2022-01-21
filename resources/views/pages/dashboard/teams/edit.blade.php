@@ -23,7 +23,7 @@
             <select style="width: 100%;" class="js-example-basic-multiple" multiple="multiple" name="userIds[]">
                 @foreach($users as $user)
                     @if($user->referee == 0 and $user->admin == 0)
-                        <input><option value="{{$user->id}}" name="PlayerName">{{$user->name}}</option></input>
+                        <option value="{{$user->id}}" name="PlayerName">{{$user->name}}</option>
                     @endif
                 @endforeach
             </select>

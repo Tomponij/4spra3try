@@ -97,7 +97,7 @@ class TeamsController extends Controller
 
         $team = Team::findOrFail($id);
         $team->name = $request->TeamName;
-        $team->PlayerName = $request->PlayerName;
+        $team->playerName = $request->PlayerName;
         $team->save();
 
         return redirect()->route('teams.index');

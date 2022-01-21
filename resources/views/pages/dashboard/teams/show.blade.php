@@ -9,7 +9,7 @@
         <h3>Team naam: {{$team->name}}</h3>
         <hr>
         <h3>Speler namen:</h3>
-        <h4>{{$team->playerName}}</h4>
+        <h4>{{$team->PlayerName}}</h4>
 
         <div class="buttons">
             @if(Auth::user()->admin == 1 or Auth::user()->id == $team->creator_id)

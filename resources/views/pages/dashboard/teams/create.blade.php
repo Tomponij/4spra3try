@@ -21,7 +21,7 @@
         <h2>Spelers toevoegen</h2>
         <div class="form-group">
             <label for="PlayerNameInput">Speler Naam:</label>
-            <input type="text" class="form-control" name="PlayerName" placeholder="Speler naam">
+            <input type="text" class="form-control" name="playerName" placeholder="Speler naam">
         </div>
         <button type="submit" class="btn btn-primary">Aanmaken</button>
     </form>
