@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('content')
-    <form action="{{route('teams.update', $team->id)}}" method="POST" xmlns="http://www.w3.org/1999/html">
+    <form action="{{route('teams.update', $team->id)}}" method="POST">
         @csrf
         @method("PUT")
         @if ($errors->any())
