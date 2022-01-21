@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('content')
-    <form action="{{route('teams.update', $team->id)}}" method="POST" xmlns="http://www.w3.org/1999/html">
+    <form action="{{route('teams.update', $team->id)}}" method="POST">
         @csrf
         @method("PUT")
         @if ($errors->any())
@@ -20,13 +20,7 @@
         </div>
         <div class="form-group">
             <label for="PlayerNameInput">Speler Naam:</label>
-            <select style="width: 100%;" class="js-example-basic-multiple" multiple="multiple" name="userIds[]">
-                @foreach($users as $user)
-                    @if($user->referee == 0 and $user->admin == 0)
-                        <input><option value="{{$user->id}}" name="PlayerName">{{$user->name}}</option></input>
-                    @endif
-                @endforeach
-            </select>
+            <input type="text" value="{{$team->playerName}}" class="form-control" name="PlayerName" placeholder="Player naam">
         </div>
         <button type="submit" class="btn btn-primary">Updaten</button>
     </form>
