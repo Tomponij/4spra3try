@@ -20,8 +20,8 @@
 
         <h2>Spelers toevoegen</h2>
         <div class="form-group">
-            <label for="PlayerNameInput">Speler Naam:</label>
-            <input type="text" class="form-control" name="playerName" placeholder="Speler naam">
+            <label for="nameSpelersInput">Speler Naam:</label>
+            <input type="text" class="form-control" name="players" placeholder="Speler naam">
         </div>
         <button type="submit" class="btn btn-primary">Aanmaken</button>
     </form>
