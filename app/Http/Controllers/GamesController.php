@@ -102,7 +102,11 @@ class GamesController extends Controller
     // Fetcher
     public function arrayfetcher()
     {
-        return response()->json(Game::all());
+        $json = Game::all();
+        return response()->json([
+            "status" => "1",
+            "payload" => $json
+        ]);
     }
 
     public function genereer(){
