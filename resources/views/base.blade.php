@@ -50,6 +50,12 @@
                 </li>
             @endif
 
+            @if(Auth::user()->referee == 1 )
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{route('scheidsrechterInfo')}}">Planning</a>
+                </li>
+            @endif
+
             <li class="nav-item dropdown ">
                 <div class="nav-link dropdown-toggle">
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ Auth::user()->name }}</a>

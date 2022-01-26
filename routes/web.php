@@ -33,7 +33,7 @@ Route::get('/index',[PagesController::class,'index'])->middleware(['auth'])->nam
 
 Route::get('/genereer', [GamesController::class, 'genereer']) ->middleware(['auth'])->name('genereer');
 
-
+Route::get('/scheidsrechterInfo', [GamesController::class, 'scheidsrechterInfo']) ->middleware(['auth'])->name('scheidsrechterInfo');
 
 //CRUD
 

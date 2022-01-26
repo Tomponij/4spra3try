@@ -28,6 +28,11 @@
             <label for="field input">Veld aanpassen:</label>
             <input type="number" value="{{$game->field_name}}" class="form-control" name="fieldInput" placeholder="field input">
         </div>
+
+        <div class="form-group">
+            <label for="Referee nummer">Referee aanpassen:</label>
+            <input type="number" value="{{$game->referee_id}}" class="form-control" name="refereeId" placeholder="field input">
+        </div>
         <button type="submit" class="btn btn-primary">Invullen</button>
     </form>
 

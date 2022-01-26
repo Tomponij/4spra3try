@@ -72,7 +72,7 @@ class GamesController extends Controller
     public function update(Request $request, $id)
     {
         $game = Game::findOrFail($id);
-        $game->update(['team1_score'=>$request->team1Score,'team2_score'=>$request->team2Score,'field_id'=>$request->fieldInput]);
+        $game->update(['team1_score'=>$request->team1Score,'team2_score'=>$request->team2Score,'field_id'=>$request->fieldInput,'referee_id'=>$request->refereeId]);
         $game->save();
 
         return redirect()->route('games.index');
@@ -120,14 +120,17 @@ class GamesController extends Controller
                 $game->team1_id = $teams[$i]->id;
                 $game->team2_id = $teams[$k]->id;
                 $game->field_id = rand(1,Field::all()->count());
-                $game->referee_id = 1;
+                $game->referee_id = rand(1,User::all()->count());
                 $game->save();
             }
         }
         return redirect()->route('games.index');
     }
 
-    
+    public function scheidsrechterInfo(){
+        $matches = Game::all();
+        return view('pages/dashboard/refereeLists')->with(compact('matches')); 
+    }
 
 
 
