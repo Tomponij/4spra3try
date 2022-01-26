@@ -26,7 +26,7 @@
 
         <div class="form-group">
             <label for="field input">Veld aanpassen:</label>
-            <input type="number" value="{{$game->field_name}}" class="form-control" name="fieldInput" placeholder="field input">
+            <input type="number" value="{{$game->field_id}}" class="form-control" name="fieldInput" placeholder="field input">
         </div>
 
         <div class="form-group">
