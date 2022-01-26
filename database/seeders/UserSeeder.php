@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
         $user->email = 'fonsdoggen@gmail.com';
         $user->password = Hash::make('test123testFons');
         $user->referee = '0';
-        $user->admin = '0';
+        $user->admin = '1';
         $user->save();
 
         $user = new User();

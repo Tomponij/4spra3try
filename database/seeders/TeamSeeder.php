@@ -16,19 +16,16 @@ class TeamSeeder extends Seeder
     {
         DB::table('teams')->insert([
             'name' => 'EenhoornTeam',
-            'nameSpelers' => 'Frenkie',
             'creator_id' => 1,
         ]);
 
         DB::table('teams')->insert([
             'name' => 'PietenTeam',
-            'nameSpelers' => 'Frenkie',
             'creator_id' => 3,
         ]);
 
         DB::table('teams')->insert([
             'name' => 'CroissantjesTeam',
-            'nameSpelers' => 'Frenkie',
             'creator_id' => 3,
         ]);
     }

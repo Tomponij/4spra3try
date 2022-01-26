@@ -14,7 +14,7 @@
             <th scope="col">vs</th>
             <th scope="col">Uit team</th>
             <th scope="col">Scheidsrechter</th>
-            @if (Auth::user()->admin = 1)
+            @if (Auth::user()->admin == 1)
                 <th scope="col">Wedstrijd wijzigen</th>
             @endif
         </tr>
@@ -28,7 +28,9 @@
                 <td>vs</td>
                 <td>{{\App\Models\Team::where('id','=',$match->team2_id)->get()[0]->name}}</td>
                 <td>{{\App\Models\User::where('id','=',$match->referee_id)->get()[0]->name}}</td>
-                <td><a href="{{route('games.edit',$match->id)}}">Wedstrijd wijzigen</a></td>
+{{--                @if(Auth::user()->admin == 1)--}}
+                    <td><a href="{{route('games.edit',$match->id)}}">Wedstrijd wijzigen</a></td>
+{{--                @endif--}}
             </tr>
         @endforeach
         </tbody>
@@ -45,7 +47,7 @@
             <th scope="col">Uit team</th>
             <th scope="col">Stand</th>
             <th scope="col">Scheidsrechter</th>
-            @if(Auth::user()->admin = 1)
+            @if(Auth::user()->admin == 1)
                 <th scope="col">Uitslag invullen</th>
             @endif
 
@@ -62,7 +64,9 @@
                 <td>{{\App\Models\Team::where('id','=',$match->team2_id)->get()[0]->name}}</td>
                 <td>{{$match->team1_score}} - {{$match->team2_score}}</td>
                 <td>{{\App\Models\User::where('id','=',$match->referee_id)->get()[0]->name}}</td>
-                <td><a href="{{route('games.edit',$match->id)}}">Uitslag toevoegen</a></td>
+{{--                @if(Auth::user()->admin == 1)--}}
+                    <td><a href="{{route('games.edit',$match->id)}}">Uitslag toevoegen</a></td>
+{{--                @endif--}}
             </tr>
         @endforeach
         </tbody>

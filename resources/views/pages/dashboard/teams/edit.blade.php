@@ -20,11 +20,10 @@
         </div>
         <div class="form-group">
             <label for="PlayerNameInput">Speler Naam:</label>
-{{--            <input type="text" value="{{$team->SpelersName}}" class="form-control" name="SpelersName" placeholder="Speler naam">--}}
-            <select style="width: 100%;" class="js-example-basic-multiple" multiple="multiple" name="userIds[]">
+            <select style="width: 100%;" class="js-example-basic-multiple" multiple="multiple" name="SpelersName">
                 @foreach($users as $user)
                     @if($user->referee == 0 and $user->admin == 0)
-                        <option name="SpelersName">{{$user->name}}</option>
+                        <option >{{$user->name}}</option>
                     @endif
                 @endforeach
             </select>

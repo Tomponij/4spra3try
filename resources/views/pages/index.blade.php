@@ -44,7 +44,7 @@
                     @foreach($teams as $team)
                         <tr>
                             <th scope="row">1</th>
-                            <td>{{$team->playerName}}</td>
+                            <td>{{$team->nameSpelers}}</td>
                         </tr>
                     @endforeach
                     </tbody>

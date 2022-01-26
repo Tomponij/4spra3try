@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Field;
 use App\Models\Game;
 use App\Models\Team;
+use App\Models\User;
 use Illuminate\Http\Request;
 use function GuzzleHttp\Promise\all;
 use function PHPUnit\Framework\returnArgument;
@@ -112,6 +113,7 @@ class GamesController extends Controller
     public function genereer(){
 
         $teams = Team::all();
+        $users = User::all();
 
         for ($i=0 ; $i < count($teams)-1 ; $i++) {
             // Loop through the 'visiting' teams, start one above the home team
@@ -129,7 +131,7 @@ class GamesController extends Controller
 
     public function scheidsrechterInfo(){
         $matches = Game::all();
-        return view('pages/dashboard/refereeLists')->with(compact('matches')); 
+        return view('pages/dashboard/refereeLists')->with(compact('matches'));
     }
 
 
