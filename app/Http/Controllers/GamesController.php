@@ -7,6 +7,8 @@ use App\Models\Game;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Compound;
+use Symfony\Component\Console\Input\Input;
 use function GuzzleHttp\Promise\all;
 use function PHPUnit\Framework\returnArgument;
 
@@ -73,7 +75,8 @@ class GamesController extends Controller
     public function update(Request $request, $id)
     {
         $game = Game::findOrFail($id);
-        $game->update(['team1_score'=>$request->team1Score,'team2_score'=>$request->team2Score,'field_id'=>$request->fieldInput,'referee_id'=>$request->refereeId]);
+        $game->update(['team1_score'=>$request->team1Score,'team2_score'=>$request->team2Score, 'speeltijd'=>$request->speeltijd, 'referee_id'=>$request->refereeId]);
+        $game->field_id = $request->fieldInput;
         $game->save();
 
         return redirect()->route('games.index');
@@ -132,6 +135,16 @@ class GamesController extends Controller
     public function scheidsrechterInfo(){
         $matches = Game::all();
         return view('pages/dashboard/refereeLists')->with(compact('matches'));
+    }
+
+    public function grasmaaien(){
+        $fields = Field::all();
+        $matches = Game::all();
+
+
+
+        return view('pages.dashboard.games.allgames')->with(compact('matches'))->with(compact('fields'));
+
     }
 
 

@@ -32,6 +32,7 @@ Route::get('/dashboard',[PagesController::class,'index'])->middleware(['auth'])-
 Route::get('/index',[PagesController::class,'index'])->middleware(['auth'])->name('index');
 
 Route::get('/genereer', [GamesController::class, 'genereer']) ->middleware(['auth'])->name('genereer');
+Route::get('/grasmaaien', [GamesController::class, 'grasmaaien']) ->middleware(['auth'])->name('allgames');
 
 Route::get('/scheidsrechterInfo', [GamesController::class, 'scheidsrechterInfo']) ->middleware(['auth'])->name('scheidsrechterInfo');
 

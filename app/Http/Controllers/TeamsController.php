@@ -94,11 +94,9 @@ class TeamsController extends Controller
         ]);
 
         $team = Team::findOrFail($id);
-        $users = User::all();
 
         $team->name = $request->TeamName;
         $team->nameSpelers = $request->SpelersName;
-        $users->update(['team_id'=>$request->SpelersName]);
         $team->save();
 
 

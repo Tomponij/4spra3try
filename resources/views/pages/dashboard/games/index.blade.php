@@ -2,7 +2,8 @@
 
 @section('content')
     @if(Auth::user()->admin == 1 )
-        <a href="{{route('genereer')}}">Wedstrijden Genereren</a>
+        <a href="{{route('genereer')}}">Wedstrijden Genereren</a><br>
+        <a href="{{route('allgames')}}">Overzicht specifiek veld</a>
     @endif
     <table class="table table-danger">
         <h1>Opkomende Wedstrijden</h1>
@@ -57,7 +58,7 @@
         <tbody>
         @foreach($matches as $match)
             <tr>
-                <td></td>
+                <td>{{$match->speeltijd}}</td>
                 <td>{{$match->field_id}}</td>
                 <td>{{\App\Models\Team::where('id','=',$match->team1_id)->get()[0]->name}}</td>
                 <td>vs</td>
