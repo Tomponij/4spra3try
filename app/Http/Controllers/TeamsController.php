@@ -47,7 +47,7 @@ class TeamsController extends Controller
 
         $team = new Team();
         $team->name = $request->TeamName;
-        $team->playerName = $request->PlayerName;
+        $team->nameSpelers = $request->SpelersName;
         $team->creator_id = Auth::user()->id;
         $team->save();
         return redirect()->route('teams.index');
@@ -75,8 +75,8 @@ class TeamsController extends Controller
     public function edit($id)
     {
         $team = Team::findOrFail($id);
-        return view('pages/dashboard/teams/edit')->with('team', $team);
-
+        $users = User::all();
+        return view('pages/dashboard/teams/edit')->with('team', $team)->with('users', $users);
     }
 
     /**
@@ -95,7 +95,7 @@ class TeamsController extends Controller
 
         $team = Team::findOrFail($id);
         $team->name = $request->TeamName;
-        $team->playerName = $request->PlayerName;
+        $team->nameSpelers = $request->SpelersName;
         $team->save();
 
         return redirect()->route('teams.index');
