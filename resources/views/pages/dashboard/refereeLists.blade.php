@@ -10,7 +10,7 @@
             <thead>
             <tr>
                 <th scope="col">Tijd</th>
-                <th scope="col">Veld</th>   
+                <th scope="col">Veld</th>
                 <th scope="col">Thuis team</th>
                 <th scope="col">vs</th>
                 <th scope="col">Uit team</th>
@@ -28,7 +28,6 @@
                     <td>{{\App\Models\Team::where('id','=',$match->team2_id)->get()[0]->name}}</td>
                     <td>{{$match->team1_score}} - {{$match->team2_score}}</td>
                     <td>{{\App\Models\User::where('id','=',$match->referee_id)->get()[0]->name}}</td>
-                    <td><a href="{{route('games.edit',$match->id)}}">Uitslag toevoegen</a></td>
                 </tr>
             @endif
         @endforeach
